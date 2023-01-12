@@ -23,7 +23,7 @@
   border-radius: 10px;
   background-color: #303c54;
   color: #fff;
-  display: flex;
+  display: relative;
   justify-content: center;
   align-items: center;
 }
@@ -37,13 +37,17 @@
 }
 
 .flashcard-front p, .flashcard-back p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background-color: #303c54;
   font-size: 48px;
   margin: 0;
 }
 
 span {
-  position: fixed;
+  display: absolute;
   top: 2%;
   left: 2%;
   background-color:#303c54;

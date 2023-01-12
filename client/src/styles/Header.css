@@ -37,6 +37,7 @@ h4:hover {
 .search-container input {
   border: none;
   background-color: #f4f4f4;
+  color: #303c54;
   padding: 10px;
   font-size: 16px;
   border-radius: 25px;

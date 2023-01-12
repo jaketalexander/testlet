@@ -7,6 +7,6 @@ router.get('/cards', controller.flashcards.getCards);
 
 router.get('/flashcards', controller.flashcards.getFlashcards);
 
-// router.delete('/flashcards', controller.flashcards.delete);
+router.delete('/flashcards', controller.flashcards.delete);
 
 module.exports = router;

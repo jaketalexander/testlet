@@ -90,8 +90,8 @@
 
 .title, .description {
   margin: 10px auto;
-  width: 80%;
-  max-width: 1350px;
+  width: 78.5%;
+  max-width: 1380px;
   border-radius: 10px;
   min-height: 3rem;
   font-weight: bold;
@@ -158,4 +158,9 @@
 
 .top-create {
   cursor: pointer;
+}
+
+.create-span {
+  color: white;
+  background-color: #0a092d;
 }

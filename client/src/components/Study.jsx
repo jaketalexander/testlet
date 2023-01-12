@@ -12,6 +12,7 @@ function Study({ setTab, currentDeck }) {
 
   return (
     <div className="flashcard-container">
+      <h4>{`${currentIndex + 1} / ${currentDeck.length}`}</h4>
       <Flashcard term={currentDeck[currentIndex].term} definition={currentDeck[currentIndex].definition} flipCard={flipCard} />
       <div className="arrows">
         <button className="left-arrow" onClick={prevCard}>&lt;</button>

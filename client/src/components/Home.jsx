@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { FaTrash } from 'react-icons/fa';
 import Spinner from './Spinner.jsx';
 import '../styles/Home.css';
 
@@ -39,6 +40,32 @@ function Home({ setTab, setCurrentDeck }) {
       });
   }
 
+  function deleteDeck(e, id) {
+    e.preventDefault();
+    e.stopPropagation();
+    axios.delete('/flashcards', {
+      data: { id },
+    })
+      .then(() => {
+        const username = 'Jake';
+        axios.get('/cards', {
+          params: {
+            username,
+          },
+        })
+          .then((response) => {
+            setFlashcardSets(response.data.rows);
+            setLoading(false);
+          })
+          .catch((error) => {
+            console.error(error);
+          });
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }
+
   if (loading) {
     return <Spinner />;
   }
@@ -48,6 +75,9 @@ function Home({ setTab, setCurrentDeck }) {
       <div className="cards-container">
         {flashcardSets.map((flashcardSet) => (
           <div className="cards" onClick={(e) => displayFlashcards(e, flashcardSet.deck_id)} key={flashcardSet.deck_id}>
+            <div className="delete-icon">
+              <FaTrash onClick={(e) => deleteDeck(e, flashcardSet.deck_id)} />
+            </div>
             <h3>{flashcardSet.title}</h3>
             <p>{flashcardSet.description}</p>
           </div>

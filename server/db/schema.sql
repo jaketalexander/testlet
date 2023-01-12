@@ -10,8 +10,7 @@ CREATE TABLE decks (
 
 CREATE TABLE flashcards (
   id SERIAL PRIMARY KEY,
-  deck_id INT,
+  deck_id INT REFERENCES decks(deck_id) ON DELETE CASCADE,
   term VARCHAR(50),
-  "definition" VARCHAR(200),
-  FOREIGN KEY (deck_id) REFERENCES decks(deck_id)
+  "definition" VARCHAR(200)
 );

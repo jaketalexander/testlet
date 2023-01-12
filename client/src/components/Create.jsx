@@ -69,7 +69,7 @@ function Create({ setTab }) {
   return (
     <div>
       <div className="create-headers">
-        <span>Create a New Study Set</span>
+        <span className="create-span">Create a New Study Set</span>
         <button className="top-create" onClick={handleSubmit}>Create</button>
       </div>
       <div className="set-info">
