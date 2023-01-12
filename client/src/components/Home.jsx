@@ -17,7 +17,6 @@ function Home({ setTab, setCurrentDeck, search, setSearch }) {
       },
     })
       .then((response) => {
-        console.log('response', response.data.rows);
         setFlashcardSets(response.data.rows);
         setFilteredSet(response.data.rows);
         setLoading(false);
@@ -28,7 +27,6 @@ function Home({ setTab, setCurrentDeck, search, setSearch }) {
   }, []);
 
   useEffect(() => {
-    console.log('search', search);
     const arr = [];
     for (let i = 0; i < flashcardSets.length; i++) {
       if (flashcardSets[i].title.toLowerCase().includes(search)) {
