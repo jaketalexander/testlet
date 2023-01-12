@@ -1,0 +1,47 @@
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 16px;
+  margin: 0 auto;
+  width: 80%;
+  max-width: 1400px;
+  padding: 50px 0;
+}
+
+.cards {
+  background: #4255ff;
+  color: #fff;
+  border-radius: 0.5rem;
+  width: 300px;
+  height: 200px;
+  font-size: 1.2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cards:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+h2 {
+  margin: 0 auto;
+  width: 80%;
+  max-width: 1400px;
+  padding: 50px 0;
+}
+
+h3 {
+  background: #4255ff;
+  color: #fff;
+  font-weight: bold;
+  font-size: larger;
+}
+
+p {
+  background: #4255ff;
+  color: lightgray;
+  font-size: 0.8em;
+}
