@@ -21,4 +21,11 @@
   justify-content: center;
   align-items: center;
   margin: 0 5px;
+  border: 1px solid white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.left-arrow:hover, .right-arrow:hover {
+  transform: scale(1.01);
 }
