@@ -38,7 +38,6 @@ module.exports = {
       .catch((err) => callback(err));
   },
   getCards(username, callback) {
-    console.log(username);
     const queryStr = `SELECT * FROM decks WHERE username='Jake'`;
     db
       .query(queryStr, (err, results) => {
@@ -46,7 +45,6 @@ module.exports = {
       });
   },
   getFlashcards(id, callback) {
-    console.log(id);
     const queryStr = `SELECT * FROM flashcards WHERE deck_id=${id}`;
     db
       .query(queryStr, (err, results) => {
@@ -54,7 +52,11 @@ module.exports = {
       });
   },
   delete(id, callback) {
-    const queryStr = `UPDATE reviews SET reported = true WHERE review_id = ${id}`;
+    console.log(id);
+    const queryStr = ` DELETE FROM decks
+    USING flashcards
+    WHERE decks.deck_id = flashcards.deck_id
+    AND decks.deck_id = ${id};`;
     db
       .query(queryStr, (err, results) => {
         callback(err, results);

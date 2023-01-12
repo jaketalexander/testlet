@@ -32,11 +32,12 @@ module.exports = {
     });
   },
   delete(req, res) {
-    models.flashcards.helpful(req.params.review_id, (err, results) => {
+    models.flashcards.delete(req.body.id, (err, results) => {
       if (err) {
         console.error('Unable to delete: ', err);
         res.sendStatus(500);
       } else {
+        console.log(results);
         res.sendStatus(204);
       }
     });
