@@ -21,9 +21,6 @@
   padding: 20px;
   box-sizing: border-box;
   border-radius: 10px;
-}
-
-.flashcard-front, .flashcard-back {
   background-color: #303c54;
   color: #fff;
   display: flex;
@@ -43,4 +40,16 @@
   background-color: #303c54;
   font-size: 48px;
   margin: 0;
+}
+
+span {
+  position: fixed;
+  top: 2%;
+  left: 2%;
+  background-color:#303c54;
+  color: #656f90;
+}
+
+.flashcard-front:hover, .flashcard-back:hover {
+  cursor: pointer;
 }
