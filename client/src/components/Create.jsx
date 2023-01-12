@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import '../styles/Create.css';
 import { FaTrash } from 'react-icons/fa';
+import axios from 'axios';
 
-function Create() {
+function Create({ setTab }) {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [flashcards, setFlashcards] = useState([
@@ -48,11 +49,28 @@ function Create() {
     setFlashcards(newFlashcards);
   }
 
+  function handleSubmit(event) {
+    event.preventDefault();
+    const flashcardData = {
+      title,
+      description,
+      flashcards,
+    };
+
+    axios.post('/flashcards', flashcardData)
+      .then((response) => {
+        setTab(1);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }
+
   return (
     <div>
       <div className="create-headers">
         <span>Create a New Study Set</span>
-        <button className="top-create">Create</button>
+        <button className="top-create" onClick={handleSubmit}>Create</button>
       </div>
       <div className="set-info">
         <input className="title" placeholder="Enter a title" onChange={handleTitleChange} />
@@ -72,6 +90,7 @@ function Create() {
             <div className="card-body">
               <div className="left-card-body">
                 <input
+                  name="term"
                   className="term"
                   placeholder="Enter term"
                   value={flashcard.term}
@@ -81,6 +100,7 @@ function Create() {
               </div>
               <div className="right-card-body">
                 <input
+                  name="definition"
                   className="definition"
                   placeholder="Enter definition"
                   value={flashcard.definition}

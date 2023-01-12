@@ -1,19 +1,25 @@
-const mongoose = require('mongoose');
+const { Pool } = require('pg');
+require('dotenv').config();
 
-mongoose.connect('mongodb://localhost:27017/splitwise', { useNewUrlParser: true, useUnifiedTopology: true });
-const { Schema } = mongoose;
-
-const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', () => {
-  console.log('mongodb connected');
+const pool = new Pool({
+  user: process.env.USER,
+  database: process.env.DATABASE,
+  port: process.env.DBPORT,
 });
 
-const splitwiseSchema = new Schema({
-  word: String,
-  definition: String,
-});
+// const pool = new Pool({
+//   user: process.env.PGUSER,
+//   host: process.env.PGHOST,
+//   database: process.env.PGDATABASE,
+//   password: process.env.PGPASSWORD,
+//   port: process.env.PORT,
+// });
 
-const Splitwise = mongoose.model('splitwise', splitwiseSchema);
+pool.connect()
+  .then(() => {
+    console.log('Successfully Connected');
+  });
 
-module.exports = Splitwise;
+const query = (text, params, callback) => pool.query(text, params, callback);
+
+module.exports = { query };

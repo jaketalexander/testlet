@@ -1,0 +1,46 @@
+.flashcard {
+  width: 65%;
+  height: 30rem;
+  perspective: 1000px;
+}
+
+.flashcard-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.4s;
+  transform-style: preserve-3d;
+}
+
+.flashcard-front,
+.flashcard-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+.flashcard-front, .flashcard-back {
+  background-color: #303c54;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flashcard-back {
+  transform: rotateX(180deg);
+}
+
+.flipped {
+  transform: rotateX(180deg);
+}
+
+.flashcard-front p, .flashcard-back p {
+  background-color: #303c54;
+  font-size: 48px;
+  margin: 0;
+}
