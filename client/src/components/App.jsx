@@ -10,13 +10,14 @@ export default function App() {
   const [tab, setTab] = useState(1);
   const [currentDeck, setCurrentDeck] = useState([]);
   const [search, setSearch] = useState('');
+  const [deckName, setDeckName] = useState('');
 
   return (
     <div>
       <Header setTab={setTab} tab={tab} search={search} setSearch={setSearch} />
-      {tab === 1 && <Home setTab={setTab} setCurrentDeck={setCurrentDeck} search={search} setSearch={setSearch} />}
+      {tab === 1 && <Home setTab={setTab} setCurrentDeck={setCurrentDeck} search={search} setSearch={setSearch} setDeckName={setDeckName} />}
       {tab === 2 && <Create setTab={setTab} />}
-      {tab === 3 && <Study setTab={setTab} currentDeck={currentDeck} />}
+      {tab === 3 && <Study setTab={setTab} currentDeck={currentDeck} deckName={deckName} />}
     </div>
   );
 }

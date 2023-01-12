@@ -150,6 +150,7 @@
   border-radius: 5px;
   font-weight: bold;
   font-size: larger;
+  padding-bottom: 10px;
 }
 
 .add-card-btn:hover {

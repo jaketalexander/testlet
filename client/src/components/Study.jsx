@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Flashcard from './Flashcard.jsx';
 import '../styles/Study.css';
 
-function Study({ setTab, currentDeck }) {
+function Study({ setTab, currentDeck, deckName }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [flipped, setFlipped] = useState(false);
 
@@ -12,7 +12,7 @@ function Study({ setTab, currentDeck }) {
 
   return (
     <div className="flashcard-container">
-      <h4>{`${currentIndex + 1} / ${currentDeck.length}`}</h4>
+      <h4>{`${deckName}  | Card: ${currentIndex + 1} / ${currentDeck.length}`}</h4>
       <Flashcard term={currentDeck[currentIndex].term} definition={currentDeck[currentIndex].definition} flipCard={flipCard} />
       <div className="arrows">
         <button className="left-arrow" onClick={prevCard}>&lt;</button>
