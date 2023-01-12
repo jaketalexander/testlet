@@ -1,0 +1,148 @@
+.create-bucket {
+  margin: 0 auto;
+  width: 80%;
+  max-width: 1400px;
+  padding-top: 50px;
+}
+
+.create-headers {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 auto;
+  width: 80%;
+  max-width: 1400px;
+  padding-top: 50px;
+}
+
+.top-create {
+  background: #4255ff;
+  color: #fff;
+  border-radius: 0.5rem;
+  min-height: 2.5rem;
+  min-width: 4rem;
+  font-size: .875rem;
+  padding: 0.5rem 1rem;
+}
+
+.card {
+  background-color: #303c54;
+  margin: 0 auto;
+  width: 80%;
+  max-width: 1400px;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 0.75rem;
+}
+
+.card-header {
+  background-color: #303c54;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #0a092d;
+  min-height: 3rem;
+  padding: 0 1rem;
+  border-radius: 50px 10px 0 0;
+}
+
+.number {
+  background-color: #303c54;
+}
+
+.card {
+  box-sizing: border-box;
+  margin: 20px auto;
+}
+
+.card-body {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.left-card-body, .right-card-body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  background-color: #303c54;
+}
+
+.term, .definition, .title, .description {
+  border: none;
+  border-bottom: 2px solid #fff;
+  transition: border-color 0.2s ease-in-out;
+  background-color: #303c54;
+  color: white;
+  width: 90%;
+  height: 2rem;
+  padding-top: 5px;
+}
+
+.set-info {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.title, .description {
+  margin: 10px auto;
+  width: 80%;
+  max-width: 1400px;
+  border-radius: 10px;
+  min-height: 3rem;
+  font-weight: bold;
+  font-size: larger;
+}
+
+.description {
+  min-height: 7rem;
+}
+
+.title::placeholder {
+  color: lightgrey;
+  font-weight: bold;
+  font-size: larger;
+  padding: 10px;
+}
+
+.description::placeholder {
+  color: lightgrey;
+  font-weight: bold;
+  font-size: larger;
+  padding: 10px;
+}
+
+.term:focus, .definition:focus, .title:focus, .description:focus {
+  outline: none;
+  border-color: yellow;
+}
+
+.term::placeholder, .definition::placeholder {
+  color: lightgrey;
+}
+
+.term-label, .definition-label {
+  padding: 10px 5px 5px 5px;
+  background-color: #303c54;
+  font-size: 80%;
+  color: lightgrey;
+}
+
+.add-card {
+  display: flex;
+  justify-content: center;
+}
+
+.add-card-btn {
+  background-color: #303c54;
+  margin: 0 auto;
+  width: 80%;
+  max-width: 1400px;
+  text-align: center;
+  font-weight: 200;
+  min-height: 7rem;
+}
