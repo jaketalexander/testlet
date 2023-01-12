@@ -13,9 +13,9 @@ export default function App() {
 
   return (
     <div>
-      <Header setTab={setTab} tab={tab} />
+      <Header setTab={setTab} tab={tab} search={search} setSearch={setSearch} />
       {tab === 1 && <Home setTab={setTab} setCurrentDeck={setCurrentDeck} search={search} setSearch={setSearch} />}
-      {tab === 2 && <Create setTab={setTab} search={search} />}
+      {tab === 2 && <Create setTab={setTab} />}
       {tab === 3 && <Study setTab={setTab} currentDeck={currentDeck} />}
     </div>
   );

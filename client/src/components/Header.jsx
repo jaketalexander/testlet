@@ -4,6 +4,7 @@ import '../styles/Header.css';
 function Header({ setTab, tab, search, setSearch }) {
   function handleTabChange(event, num) {
     event.preventDefault();
+    setSearch('');
     setTab(num);
   }
 
