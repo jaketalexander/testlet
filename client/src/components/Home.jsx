@@ -29,7 +29,7 @@ function Home({ setTab, setCurrentDeck, search, setSearch, setDeckName }) {
   useEffect(() => {
     const arr = [];
     for (let i = 0; i < flashcardSets.length; i++) {
-      if (flashcardSets[i].title.toLowerCase().includes(search)) {
+      if (flashcardSets[i].title.toLowerCase().includes(search.toLowerCase())) {
         arr.push(flashcardSets[i]);
       }
     }
@@ -70,6 +70,7 @@ function Home({ setTab, setCurrentDeck, search, setSearch, setDeckName }) {
         })
           .then((response) => {
             setFlashcardSets(response.data.rows);
+            setFilteredSet(response.data.rows);
             setLoading(false);
           })
           .catch((error) => {
