@@ -17,7 +17,7 @@ export default function App() {
       <Header setTab={setTab} tab={tab} search={search} setSearch={setSearch} />
       {tab === 1 && <Home setTab={setTab} setCurrentDeck={setCurrentDeck} search={search} setSearch={setSearch} setDeckName={setDeckName} />}
       {tab === 2 && <Create setTab={setTab} />}
-      {tab === 3 && <Study setTab={setTab} currentDeck={currentDeck} deckName={deckName} />}
+      {tab === 3 && <Study setCurrentDeck={setCurrentDeck} currentDeck={currentDeck} deckName={deckName} />}
     </div>
   );
 }

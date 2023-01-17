@@ -42,4 +42,16 @@ module.exports = {
       }
     });
   },
+  editCards(req, res) {
+    const obj = { ...req.body, id: req.params };
+    models.flashcards.edit(obj, (err, results) => {
+      if (err) {
+        console.error('Unable to edit: ', err);
+        res.sendStatus(500);
+      } else {
+        console.log(results);
+        res.sendStatus(204);
+      }
+    });
+  },
 };

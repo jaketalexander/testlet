@@ -29,3 +29,7 @@
 .left-arrow:hover, .right-arrow:hover {
   transform: scale(1.01);
 }
+
+.randomize-button, .unrandomize-button {
+  padding: 20px 40px;
+}

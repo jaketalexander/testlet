@@ -58,4 +58,12 @@ module.exports = {
         callback(err, results);
       });
   },
+  edit(req, callback) {
+    console.log('reqqqqq', req);
+    const queryStr = `UPDATE flashcards SET term='${req.term}', definition='${req.definition}' WHERE id=${req.id.id}`;
+    db
+      .query(queryStr, (err, results) => {
+        callback(err, results);
+      });
+  },
 };

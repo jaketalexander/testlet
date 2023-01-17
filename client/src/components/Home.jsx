@@ -92,7 +92,7 @@ function Home({ setTab, setCurrentDeck, search, setSearch, setDeckName }) {
         {filteredSet.map((flashcardSet) => (
           <div className="cards" onClick={(e) => displayFlashcards(e, flashcardSet)} key={Math.random()}>
             <div className="delete-icon">
-              <FaTrash onClick={(e) => deleteDeck(e, flashcardSet.deck_id)} />
+              <FaTrash style={{ backgroundColor: '#4255ff' }}onClick={(e) => deleteDeck(e, flashcardSet.deck_id)} />
             </div>
             <h3>{flashcardSet.title}</h3>
             <p>{flashcardSet.description}</p>
