@@ -27,9 +27,6 @@ module.exports = {
         const queryFlashcardString = `INSERT INTO flashcards(deck_id, term, definition)
           VALUES ($1, unnest(ARRAY['${terms.join("','")}']), unnest(ARRAY['${definitions.join("','")}']))`;
         const queryFlashcardArgs = [deck_id];
-
-        console.log(queryFlashcardString);
-        console.log(queryFlashcardArgs);
         db
           .query(queryFlashcardString, queryFlashcardArgs)
           .catch((err) => callback(err));
@@ -52,7 +49,6 @@ module.exports = {
       });
   },
   delete(id, callback) {
-    console.log(id);
     const queryStr = ` DELETE FROM decks
     USING flashcards
     WHERE decks.deck_id = flashcards.deck_id
