@@ -1,5 +1,6 @@
 .flashcard {
   width: 65%;
+  max-width: 50rem;
   height: 30rem;
   perspective: 1000px;
 }
@@ -57,7 +58,7 @@ span {
 .modal-title {
   font-size: 40px;
   color: #fff;
-  margin: 0 0 1rem;
+  margin: 1rem 0;
   border: none;
   line-height: 1.25;
 }
@@ -112,6 +113,10 @@ span {
   background-color:#303c54;
 }
 
+.modal-header:hover {
+  cursor: pointer;
+}
+
 .modal-content {
   flex: 1;
   display: flex;
@@ -136,4 +141,9 @@ span {
   width: 100%;
   padding: 10px;
   margin: 20px 0;
+}
+
+.definition, .term {
+  font-size: 1.5rem;
+  width: 100%;
 }

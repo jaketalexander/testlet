@@ -13,7 +13,7 @@ const modalStyles = {
     bottom: 0,
     backgroundColor: 'rgba(15, 14, 50, 0.75)',
     borderRadius: '10px',
-    border: 'none',
+    border: 0,
   },
   content: {
     top: '50%',

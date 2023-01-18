@@ -4,6 +4,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow-y: visible;
 }
 
 .arrows {
@@ -30,6 +31,6 @@
   transform: scale(1.01);
 }
 
-.randomize-button, .unrandomize-button {
-  padding: 20px 40px;
+.randomize-button:hover {
+  cursor: pointer;
 }

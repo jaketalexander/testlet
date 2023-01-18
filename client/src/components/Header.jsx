@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import '../styles/Header.css';
 
-function Header({ setTab, tab, search, setSearch }) {
+function Header({
+  setTab, tab, search, setSearch,
+}) {
   function handleTabChange(event, num) {
     event.preventDefault();
     setSearch('');
