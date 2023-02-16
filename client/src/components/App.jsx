@@ -7,7 +7,7 @@ import SignIn from './SignIn.jsx';
 import '../styles/App.css';
 
 export default function App() {
-  const [tab, setTab] = useState(0);
+  const [tab, setTab] = useState(1);
   const [currentDeck, setCurrentDeck] = useState([]);
   const [search, setSearch] = useState('');
   const [deckName, setDeckName] = useState('');
