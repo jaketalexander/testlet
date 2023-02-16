@@ -3,7 +3,7 @@ import React from 'react';
 function SignIn() {
   return (
     <div>
-      <p>Sign in page!</p>
+      <p>Please sign in</p>
     </div>
   );
 }

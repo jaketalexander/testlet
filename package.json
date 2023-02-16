@@ -1,7 +1,7 @@
 {
-  "name": "sunny-side-up",
+  "name": "quizlet",
   "version": "1.0.0",
-  "description": "Sunny Side Up",
+  "description": "flashcards",
   "main": "index.jsx",
   "scripts": {
     "build": "cross-env NODE_ENV=development webpack --config webpack.config.js",
@@ -14,14 +14,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Vector-Software-Engineering/sunny-side-up.git"
+    "url": "git+https://github.com/jaketalexander/quizlet"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Vector-Software-Engineering/sunny-side-up/issues"
-  },
-  "homepage": "https://github.com/Vector-Software-Engineering/sunny-side-up#readme",
   "devDependencies": {
     "@babel/core": "^7.20.5",
     "@babel/preset-env": "^7.20.2",
