@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/Flashcard.css';
 import Modal from 'react-modal';
 import axios from 'axios';
@@ -35,6 +35,11 @@ function Flashcard({ id, term, definition }) {
   const [editTerm, setEditTerm] = useState(term);
   const [editDefinition, setEditDefinition] = useState(definition);
 
+  useEffect(() => {
+    setEditTerm(term);
+    setEditDefinition(definition);
+  }, [term, definition]);
+
   function handleEdit(e) {
     e.preventDefault();
     e.stopPropagation();
@@ -46,6 +51,8 @@ function Flashcard({ id, term, definition }) {
     axios.patch(`/cards/${id}`, { term: editTerm, definition: editDefinition })
       .then(() => {
         setModalVisible(false);
+        setEditTerm(term);
+        setEditDefinition(definition);
       })
       .catch((err) => {
         console.log(err);

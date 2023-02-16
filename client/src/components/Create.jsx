@@ -14,6 +14,7 @@ function Create({ setTab }) {
     { id: 5, term: '', definition: '' },
   ]);
   const [lastId, setLastId] = useState(5);
+  const [toggleError, setToggleError] = useState(false);
 
   function handleTitleChange(event) {
     setTitle(event.target.value);
@@ -51,10 +52,16 @@ function Create({ setTab }) {
 
   function handleSubmit(event) {
     event.preventDefault();
+    const filteredFlashcards = flashcards.filter((flashcard) => flashcard.term.trim() !== '' && flashcard.definition.trim() !== '');
+    if (filteredFlashcards.length === 0) {
+      setToggleError(true);
+      return;
+    }
+    setToggleError(false);
     const flashcardData = {
       title,
       description,
-      flashcards,
+      flashcards: filteredFlashcards,
     };
 
     axios.post('/flashcards', flashcardData)
@@ -70,6 +77,7 @@ function Create({ setTab }) {
     <div>
       <div className="create-headers">
         <span className="create-span">Create a New Study Set</span>
+        {toggleError && <span className="error-message">Please fill in at least one flashcard</span>}
         <button className="top-create" onClick={handleSubmit}>Create</button>
       </div>
       <div className="set-info">
@@ -84,7 +92,7 @@ function Create({ setTab }) {
                 <span className="number">{flashcard.id}</span>
               </div>
               <div className="right-header">
-                <FaTrash onClick={() => handleDelete(flashcard.id)} />
+                <FaTrash style={{ backgroundColor: "#303c54" }}onClick={() => handleDelete(flashcard.id)} />
               </div>
             </div>
             <div className="card-body">

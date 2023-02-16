@@ -17,7 +17,6 @@ function Study({ setCurrentDeck, currentDeck, deckName }) {
     setCurrentDeck(_.shuffle(currentDeck));
   }
 
-
   return (
     <div className="flashcard-container">
       <h4>{`${deckName}  | Card: ${currentIndex + 1} / ${currentDeck.length}`}</h4>

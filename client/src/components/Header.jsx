@@ -17,7 +17,7 @@ function Header({
   return (
     <header>
       <div className="left-header">
-        <h1>Quizlet</h1>
+        <h1>Testlet</h1>
         <h4 onClick={(e) => handleTabChange(e, 1)}>Home</h4>
         <h4 onClick={(e) => handleTabChange(e, 2)}>Create</h4>
       </div>
