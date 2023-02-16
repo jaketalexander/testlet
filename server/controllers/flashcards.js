@@ -4,7 +4,7 @@ module.exports = {
   getCards(req, res) {
     models.flashcards.getCards(req.query.username, (err, results) => {
       if (err) {
-        console.error('Unable to retrieve from the database: ', err);
+        console.error('Unable to retrieve cards from the database: ', err);
         res.sendStatus(500);
       } else {
         res.status(200).send(results);
